@@ -5,6 +5,26 @@ from pathlib import Path
 
 file_path = Path("database.bin")
 
+class BotInfo(ABC):
+    @abstractmethod
+    def display_info(self):
+        pass
+
+class BotBirthday(ABC):
+    @abstractmethod
+    def get_data(self):
+        pass
+
+class BotContact(BotInfo, BotBirthday):
+    def __init__(self) -> None:
+        pass
+    def get_data(self):
+        data = self.get_data()
+        return data
+    def display_info(self):
+        print (f'Result: {self.get_data}')
+
+
 
 class Field:
     def __init__(self, value):
